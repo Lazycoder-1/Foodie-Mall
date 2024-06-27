@@ -16,7 +16,7 @@ def add_to_cart(item):
     if item not in main_cart:
         main_cart.append(item)
         print('You have added {} to your cart'.format(item))
-        print('You have {} items in your cart'.format(len(main_cart)))
+        print('You have {} item(s) in your cart'.format(len(main_cart)))
     else:
         print('You have that item in your cart already')
 
@@ -24,15 +24,25 @@ def remove_from_cart(item):
     item = item.capitalize()
     if item in main_cart:
         main_cart.remove(item)
-        print('You have that item already in your in cart')
-        print('You have {} items in your cart'.format(len(main_cart)))
+        print('{} was removed from your cart'.format(item))
+        print('You have {} item(s) in your cart'.format(len(main_cart)))
     else:
         print('Please you do not have that item in your cart')
 
+def display_items():
+    print('This is your shopping list')
+    for item in main_cart:
+        print(item)
+
 show_menu()
 add_to_cart('mango')
-#remove_from_cart('mango')
-print(main_cart)
+#remove_from_cart()
+add_to_cart('guava')
+add_to_cart('apples')
+display_items()
+
+
+#print(main_cart)
 
 
 
